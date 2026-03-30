@@ -13,7 +13,7 @@ geoportal/
 ├── css/
 │   └── styles.css      ← Estilos globales
 ├── js/
-│   ├── config.js       ← ⚙️  Configuración central (URLs, capas)
+│   ├── config.js       ← Configuración central (URLs, capas)
 │   ├── app.js          ← Controlador de navegación
 │   ├── wms.js          ← Módulo visualización WMS
 │   ├── download.js     ← Módulo descarga WFS
