@@ -1,6 +1,6 @@
 /**
  * wms.js — Módulo de visualización WMS
- * Gestiona el mapa del módulo Capas WMS con OpenLayers.
+ * 4 capas: mpios_mm, DEM_Barrancabermeja, Curvas Hidrologicas, cortado
  */
 
 const WMS = (() => {
@@ -8,20 +8,13 @@ const WMS = (() => {
   let layers = {};
   let initialized = false;
 
-  // Construye la URL WMS para una capa
-  function buildWMSUrl(layerName) {
-    return `${CONFIG.GEOSERVER_URL}/${CONFIG.WORKSPACE}/wms`;
-  }
-
-  // Crea una capa WMS de OpenLayers
   function createWMSLayer(key) {
     const cfg = CONFIG.LAYERS[key];
     return new ol.layer.Image({
       source: new ol.source.ImageWMS({
-        url: buildWMSUrl(cfg.name),
+        url: `${CONFIG.GEOSERVER_URL}/${CONFIG.WORKSPACE}/wms`,
         params: {
           'LAYERS': `${CONFIG.WORKSPACE}:${cfg.name}`,
-          'TILED': true,
           'FORMAT': 'image/png',
           'TRANSPARENT': true
         },
@@ -33,24 +26,20 @@ const WMS = (() => {
     });
   }
 
-  // Inicializa el mapa WMS
   function init() {
     if (initialized) return;
     initialized = true;
 
-    // Capa base OSM
-    const osmLayer = new ol.layer.Tile({
-      source: new ol.source.OSM()
-    });
+    const osmLayer = new ol.layer.Tile({ source: new ol.source.OSM() });
 
-    // Crear capas WMS
     layers.layer1 = createWMSLayer('layer1');
     layers.layer2 = createWMSLayer('layer2');
     layers.layer3 = createWMSLayer('layer3');
+    layers.layer4 = createWMSLayer('layer4');
 
     map = new ol.Map({
       target: 'wms-map',
-      layers: [osmLayer, layers.layer1, layers.layer2, layers.layer3],
+      layers: [osmLayer, layers.layer1, layers.layer2, layers.layer3, layers.layer4],
       view: new ol.View({
         center: ol.proj.fromLonLat(CONFIG.DEFAULT_CENTER),
         zoom: CONFIG.DEFAULT_ZOOM
@@ -58,33 +47,20 @@ const WMS = (() => {
       controls: ol.control.defaults.defaults({ zoom: true, attribution: false })
     });
 
-    // Mostrar coordenadas al mover el ratón
     map.on('pointermove', (evt) => {
-      const lonLat = ol.proj.toLonLat(evt.coordinate);
-      const lat = lonLat[1].toFixed(5);
-      const lng = lonLat[0].toFixed(5);
-      document.getElementById('wmsCoords').textContent = `Lat ${lat} · Lng ${lng}`;
+      const ll = ol.proj.toLonLat(evt.coordinate);
+      document.getElementById('wmsCoords').textContent =
+        `Lat ${ll[1].toFixed(5)} · Lng ${ll[0].toFixed(5)}`;
     });
 
-    // Ocultar loader cuando el mapa esté listo
-    map.once('rendercomplete', () => {
-      const loader = document.getElementById('wmsLoader');
-      if (loader) loader.classList.add('hidden');
-    });
-
-    setTimeout(() => {
-      const loader = document.getElementById('wmsLoader');
-      if (loader) loader.classList.add('hidden');
-    }, 2000);
+    map.once('rendercomplete', () => document.getElementById('wmsLoader')?.classList.add('hidden'));
+    setTimeout(() => document.getElementById('wmsLoader')?.classList.add('hidden'), 2000);
   }
 
-  // Activa o desactiva una capa
   function toggleLayer(key, visible) {
-    if (!layers[key]) return;
-    layers[key].setVisible(visible);
+    if (layers[key]) layers[key].setVisible(visible);
   }
 
-  // Ajusta la opacidad de una capa
   function setOpacity(key, value) {
     if (!layers[key]) return;
     layers[key].setOpacity(value / 100);
@@ -92,17 +68,15 @@ const WMS = (() => {
     if (el) el.textContent = `${value}%`;
   }
 
-  // Muestra solo una capa
   function showOnly(key) {
     Object.keys(layers).forEach(k => {
-      const visible = (k === key);
-      layers[k].setVisible(visible);
+      const v = k === key;
+      layers[k].setVisible(v);
       const chk = document.getElementById(`chk-${k}`);
-      if (chk) chk.checked = visible;
+      if (chk) chk.checked = v;
     });
   }
 
-  // Muestra todas las capas
   function showAll() {
     Object.keys(layers).forEach(k => {
       layers[k].setVisible(true);
@@ -111,7 +85,6 @@ const WMS = (() => {
     });
   }
 
-  // Oculta todas las capas
   function hideAll() {
     Object.keys(layers).forEach(k => {
       layers[k].setVisible(false);

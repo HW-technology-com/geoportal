@@ -1,6 +1,7 @@
 /**
- * config.js — Configuración central del GeoPortal ACVC
- * Modifica estas variables para apuntar a tu GeoServer.
+ * config.js — Configuración central del GeoPortal
+ * Angelmiro Quiroz — Ing. Informático / Esp. Gestión Ambiental
+ * GeoServer: geoserver-aqp.azurewebsites.net
  */
 
 const CONFIG = {
@@ -10,17 +11,18 @@ const CONFIG = {
   // Espacio de trabajo (workspace)
   WORKSPACE: 'aquiroz',
 
-  // Capas disponibles (nombre exacto en GeoServer)
+  // Capas publicadas en GeoServer (nombres exactos)
   LAYERS: {
-    layer1: { name: 'capa_predios',    label: 'Predios Rurales',   color: '#3b82f6' },
-    layer2: { name: 'capa_cobertura',  label: 'Cobertura Vegetal', color: '#10b981' },
-    layer3: { name: 'capa_rios',       label: 'Red Hídrica',       color: '#f59e0b' }
+    layer1: { name: 'mpios_mm',            label: 'Municipios MM',         color: '#3b82f6', tipo: 'Polígono' },
+    layer2: { name: 'DEM_Barrancabermeja', label: 'DEM Barrancabermeja',   color: '#10b981', tipo: 'Ráster'   },
+    layer3: { name: 'Curvas Hidrologicas', label: 'Curvas Hidrológicas',   color: '#f59e0b', tipo: 'Línea'    },
+    layer4: { name: 'cortado',             label: 'Puntos Hidrológicos',   color: '#e879f9', tipo: 'Punto'    }
   },
 
-  // Extensión inicial del mapa (Colombia — Magdalena Medio)
+  // Centro inicial del mapa — Barrancabermeja, Magdalena Medio
   DEFAULT_CENTER: [-73.85, 7.05],   // [lng, lat]
   DEFAULT_ZOOM:   9,
 
-  // Extensión Colombia completa [minLng, minLat, maxLng, maxLat]
+  // Extensión Colombia [minLng, minLat, maxLng, maxLat]
   COLOMBIA_EXTENT: [-81.7, -4.2, -66.8, 12.5]
 };
