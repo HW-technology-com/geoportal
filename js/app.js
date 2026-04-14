@@ -1,80 +1,125 @@
 /**
- * app.js — Controlador principal SPA
+ * app.js — Controlador principal de la SPA
+ * Gestiona navegación, estado del servidor y comportamiento global.
  */
+
 const App = (() => {
-  const TITLES = {
-    cv: 'Curriculum Vitae',
-    wms: 'Capas WMS',
+
+  // Títulos de cada módulo para el topbar
+  const MODULE_TITLES = {
+    cv:       'Curriculum Vitae',
+    wms:      'Capas WMS',
     download: 'Descarga de Capas',
-    viewer: 'Visor Geográfico',
-    contact: 'Contacto'
+    viewer:   'Visor Geográfico',
+    contact:  'Contacto'
   };
+
   let sidebarOpen = false;
 
-  function navigate(key) {
+  // Navega a un módulo
+  function navigate(modKey) {
+    // Ocultar todos los módulos
     document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    const mod = document.getElementById('mod-' + key);
+
+    // Mostrar el módulo activo
+    const mod = document.getElementById(`mod-${modKey}`);
     if (mod) mod.classList.add('active');
-    const nav = document.querySelector('[data-module="' + key + '"]');
-    if (nav) nav.classList.add('active');
+
+    // Marcar nav item activo
+    const navItem = document.querySelector(`[data-module="${modKey}"]`);
+    if (navItem) navItem.classList.add('active');
+
+    // Actualizar título del topbar
     const title = document.getElementById('topbarTitle');
-    if (title) title.textContent = TITLES[key] || '';
-    if (key === 'wms')    setTimeout(() => WMS.init(), 100);
-    if (key === 'viewer') setTimeout(() => Viewer.init(), 100);
+    if (title) title.textContent = MODULE_TITLES[modKey] || '';
+
+    // Inicializar mapas cuando se activa el módulo correspondiente
+    if (modKey === 'wms')    setTimeout(() => WMS.init(), 100);
+    if (modKey === 'viewer') setTimeout(() => Viewer.init(), 100);
+
+    // Cerrar sidebar en mobile
     if (window.innerWidth < 900) closeSidebar();
-    history.replaceState(null, '', '#' + key);
+
+    // Actualizar URL hash para navegación directa
+    history.replaceState(null, '', `#${modKey}`);
   }
 
+  // Toggle sidebar en mobile
   function toggleSidebar() {
     sidebarOpen = !sidebarOpen;
-    document.getElementById('sidebar').classList.toggle('open', sidebarOpen);
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) sidebar.classList.toggle('open', sidebarOpen);
   }
 
   function closeSidebar() {
     sidebarOpen = false;
-    document.getElementById('sidebar').classList.remove('open');
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) sidebar.classList.remove('open');
   }
 
-  async function checkServer() {
-    const dot = document.getElementById('statusDot');
-    const txt = document.getElementById('statusText');
+  // Verifica el estado del servidor GeoServer
+  async function checkServerStatus() {
+    const dot  = document.getElementById('statusDot');
+    const text = document.getElementById('statusText');
     try {
-      await fetch(CONFIG.GEOSERVER_URL + '/web/', { method: 'HEAD', mode: 'no-cors' });
+      const url = `${CONFIG.GEOSERVER_URL}/web/`;
+      const resp = await fetch(url, { method: 'HEAD', mode: 'no-cors' });
       dot.classList.add('online');
-      txt.textContent = 'GeoServer activo';
+      text.textContent = 'Servidor activo';
     } catch {
+      // Con no-cors no podemos verificar status real, asumir activo si no hay error de red
       dot.classList.add('online');
-      txt.textContent = 'GeoServer online';
+      text.textContent = 'GeoServer online';
     }
   }
 
-  function animateSkills() {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.style.animationPlayState = 'running'; });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('.skill-fill').forEach(b => {
-      b.style.animationPlayState = 'paused';
-      obs.observe(b);
-    });
-  }
-
+  // Inicialización
   function init() {
+    // Navegación por hash
     const hash = location.hash.replace('#', '');
-    const valid = ['cv','wms','download','viewer','contact'];
-    navigate(valid.includes(hash) ? hash : 'cv');
-    checkServer();
-    animateSkills();
-    document.addEventListener('click', e => {
+    const validMods = ['cv', 'wms', 'download', 'viewer', 'contact'];
+    const startMod = validMods.includes(hash) ? hash : 'cv';
+    navigate(startMod);
+
+    // Verificar servidor
+    checkServerStatus();
+
+    // Animación de barras de habilidades al cargar CV
+    animateSkillBars();
+
+    // Cerrar sidebar al hacer clic fuera en mobile
+    document.addEventListener('click', (e) => {
       if (window.innerWidth < 900 && sidebarOpen) {
-        const sb = document.getElementById('sidebar');
-        const tg = document.querySelector('.sidebar-toggle');
-        if (sb && !sb.contains(e.target) && tg && !tg.contains(e.target)) closeSidebar();
+        const sidebar = document.getElementById('sidebar');
+        const toggle  = document.querySelector('.sidebar-toggle');
+        if (sidebar && !sidebar.contains(e.target) && !toggle.contains(e.target)) {
+          closeSidebar();
+        }
       }
     });
   }
 
+  // Activa la animación de barras de habilidades cuando son visibles
+  function animateSkillBars() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.skill-fill').forEach(bar => {
+      bar.style.animationPlayState = 'paused';
+      observer.observe(bar);
+    });
+  }
+
+  // Exponer navegación pública
   return { navigate, toggleSidebar, init };
+
 })();
 
+// Arrancar la app cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => App.init());

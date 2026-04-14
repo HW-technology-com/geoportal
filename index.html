@@ -19,8 +19,6 @@
         <circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="1.5"/>
         <ellipse cx="14" cy="14" rx="6" ry="13" stroke="var(--accent)" stroke-width="1.2"/>
         <line x1="1" y1="14" x2="27" y2="14" stroke="var(--accent)" stroke-width="1.2"/>
-        <line x1="3" y1="8" x2="25" y2="8" stroke="var(--accent)" stroke-width="0.8" opacity="0.5"/>
-        <line x1="3" y1="20" x2="25" y2="20" stroke="var(--accent)" stroke-width="0.8" opacity="0.5"/>
       </svg>
     </div>
     <div class="brand-text">
@@ -60,24 +58,21 @@
 
 <main class="main-content">
   <header class="topbar">
-    <button class="sidebar-toggle" onclick="App.toggleSidebar()">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="sidebar-toggle" onclick="App.toggleSidebar()"><span></span><span></span><span></span></button>
     <div class="topbar-title" id="topbarTitle">Curriculum Vitae</div>
     <div class="topbar-meta"><span id="coordDisplay"></span></div>
   </header>
 
   <div class="modules-container">
 
-    <!-- ── CV ─────────────────────────────────────────── -->
+    <!-- CV -->
     <section class="module active" id="mod-cv">
       <div class="cv-grid">
-
         <div class="cv-card cv-profile">
           <div class="avatar-ring">
             <svg width="64" height="64" viewBox="0 0 64 64">
               <circle cx="32" cy="22" r="14" fill="var(--accent)" opacity="0.12" stroke="var(--accent)" stroke-width="1.5"/>
-              <circle cx="32" cy="22" r="8"  fill="var(--accent)" opacity="0.3"/>
+              <circle cx="32" cy="22" r="8" fill="var(--accent)" opacity="0.3"/>
               <path d="M8 58c0-13.3 10.7-24 24-24s24 10.7 24 24" fill="var(--accent)" opacity="0.1" stroke="var(--accent)" stroke-width="1.5"/>
             </svg>
           </div>
@@ -86,18 +81,15 @@
           <p class="profile-title">Esp. Gestión Ambiental</p>
           <p class="profile-org">Barrancabermeja · Colombia</p>
           <div class="profile-tags">
-            <span class="tag">GIS / SIG</span>
-            <span class="tag">GeoServer</span>
-            <span class="tag">QGIS</span>
-            <span class="tag">Drones UAV</span>
-            <span class="tag">IA Aplicada</span>
+            <span class="tag">GIS / SIG</span><span class="tag">GeoServer</span>
+            <span class="tag">QGIS</span><span class="tag">Drones UAV</span><span class="tag">IA Aplicada</span>
           </div>
         </div>
 
         <div class="cv-card cv-about">
           <h3 class="card-title"><span class="card-title-icon">01</span> Perfil Profesional</h3>
           <p class="card-text">Ingeniero Informático especialista en Gestión Ambiental, apasionado por utilizar la tecnología para impactar positivamente en la sociedad. Experiencia en operación de drones, inteligencia artificial, diseño y análisis SIG.</p>
-          <p class="card-text">Dedicado al desarrollo de soluciones que benefician la región y sus comunidades, aplicando destrezas técnicas para encontrar soluciones innovadoras a problemas sociales, creyendo en el poder de la tecnología para crear cambio significativo.</p>
+          <p class="card-text">Dedicado al desarrollo de soluciones que benefician la región y sus comunidades, aplicando destrezas técnicas para encontrar soluciones innovadoras a problemas sociales.</p>
           <div class="contact-list" style="margin-top:14px">
             <div class="contact-row"><span class="contact-label">Teléfono</span><span class="contact-val">3502160379</span></div>
             <div class="contact-row"><span class="contact-label">Correo</span><span class="contact-val">soluciones@dronesfalcon.co</span></div>
@@ -124,39 +116,22 @@
             <div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">En formación</div><div class="tl-role">Maestría Teledetección y SIG</div><div class="tl-desc">Universidad Andina Simón Bolívar — UASB</div></div></div>
             <div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">2024</div><div class="tl-role">Esp. en Gestión Ambiental</div><div class="tl-desc">Instituto Universitario de La Paz — UNIPAZ</div></div></div>
             <div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">2022</div><div class="tl-role">Ingeniero Informático</div><div class="tl-desc">Instituto Universitario de La Paz — UNIPAZ</div></div></div>
-            <div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">2009</div><div class="tl-role">Técnico Hardware y Redes</div><div class="tl-desc">SENA — Servicio Nacional de Aprendizaje</div></div></div>
-            <div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">2006</div><div class="tl-role">Bachiller Académico</div><div class="tl-desc">Instituto Metropolitano de Bucaramanga — IMEB</div></div></div>
+            <div class="timeline-item"><div class="tl-dot"></div><div class="tl-content"><div class="tl-date">2009</div><div class="tl-role">Técnico Hardware y Redes</div><div class="tl-desc">SENA</div></div></div>
           </div>
         </div>
 
         <div class="cv-card cv-projects">
-          <h3 class="card-title"><span class="card-title-icon">04</span> Experiencia Profesional</h3>
+          <h3 class="card-title"><span class="card-title-icon">04</span> Experiencia</h3>
           <div class="projects-grid">
-            <div class="project-card">
-              <div class="project-icon">🌿</div>
-              <div class="project-name">Profesional Ambiental</div>
-              <div class="project-desc">APPLUS NORCONTROL LTDA · 2021–2025. Proyectos de compensación ambiental e inversión para ECOPETROL en la VRC.</div>
-            </div>
-            <div class="project-card">
-              <div class="project-icon">💻</div>
-              <div class="project-name">Técnico Informático</div>
-              <div class="project-desc">Programa Desarrollo y Paz · 2009–2021. Soporte informático y operación de drones en procesos de búsqueda.</div>
-            </div>
-            <div class="project-card">
-              <div class="project-icon">🛰</div>
-              <div class="project-name">Cartografía con Drones</div>
-              <div class="project-desc">Vuelos fotogramétricos, ortomosaicos y modelos de elevación digital para proyectos ambientales y territoriales.</div>
-            </div>
-            <div class="project-card">
-              <div class="project-icon">🗺</div>
-              <div class="project-name">IDE Magdalena Medio</div>
-              <div class="project-desc">Infraestructura de datos espaciales con GeoServer en Azure. Publicación de capas WMS/WFS para la región.</div>
-            </div>
+            <div class="project-card"><div class="project-icon">🌿</div><div class="project-name">Profesional Ambiental</div><div class="project-desc">APPLUS NORCONTROL LTDA · 2021–2025. Proyectos de compensación ambiental para ECOPETROL en la VRC.</div></div>
+            <div class="project-card"><div class="project-icon">💻</div><div class="project-name">Técnico Informático</div><div class="project-desc">Programa Desarrollo y Paz · 2009–2021. Soporte informático y operación de drones.</div></div>
+            <div class="project-card"><div class="project-icon">🛰</div><div class="project-name">Cartografía con Drones</div><div class="project-desc">Vuelos fotogramétricos y modelos de elevación digital para proyectos ambientales.</div></div>
+            <div class="project-card"><div class="project-icon">🗺</div><div class="project-name">IDE Magdalena Medio</div><div class="project-desc">Infraestructura de datos espaciales con GeoServer en Azure. Publicación WMS/WFS.</div></div>
           </div>
         </div>
 
         <div class="cv-card cv-contact-info">
-          <h3 class="card-title"><span class="card-title-icon">05</span> Contacto y Referencias</h3>
+          <h3 class="card-title"><span class="card-title-icon">05</span> Contacto</h3>
           <div class="contact-list">
             <div class="contact-row"><span class="contact-label">Empresa</span><span class="contact-val">Drones Falcón SAS</span></div>
             <div class="contact-row"><span class="contact-label">GeoPortal</span><span class="contact-val">geoserver-aqp.azurewebsites.net</span></div>
@@ -164,15 +139,14 @@
             <div class="contact-row"><span class="contact-label">Ref. 2</span><span class="contact-val">José Alberto Santos · 3102399698</span></div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ── WMS ────────────────────────────────────────── -->
+    <!-- WMS -->
     <section class="module" id="mod-wms">
       <div class="module-header">
         <h2 class="module-title">Visualización de Capas WMS</h2>
-        <p class="module-desc">Activa, desactiva y combina las 4 capas del Magdalena Medio desde GeoServer.</p>
+        <p class="module-desc">Activa y combina las 5 capas del Magdalena Medio desde GeoServer.</p>
       </div>
       <div class="wms-layout">
         <div class="wms-control-panel">
@@ -195,8 +169,8 @@
             <div class="layer-control">
               <div class="layer-toggle-row">
                 <label class="toggle-switch"><input type="checkbox" id="chk-layer2" onchange="WMS.toggleLayer('layer2',this.checked)"/><span class="toggle-slider"></span></label>
-                <div class="layer-info"><div class="layer-name">DEM Barrancabermeja</div><div class="layer-tech">aquiroz:DEM_Barrancabermeja · Ráster</div></div>
-                <div class="layer-color" style="background:#10b981"></div>
+                <div class="layer-info"><div class="layer-name">Departamentos</div><div class="layer-tech">aquiroz:depto · Polígono</div></div>
+                <div class="layer-color" style="background:#8b5cf6"></div>
               </div>
               <div class="layer-opacity-row">
                 <span class="opacity-label">Opacidad</span>
@@ -208,8 +182,8 @@
             <div class="layer-control">
               <div class="layer-toggle-row">
                 <label class="toggle-switch"><input type="checkbox" id="chk-layer3" onchange="WMS.toggleLayer('layer3',this.checked)"/><span class="toggle-slider"></span></label>
-                <div class="layer-info"><div class="layer-name">Curvas Hidrológicas</div><div class="layer-tech">aquiroz:Curvas Hidrologicas · Línea</div></div>
-                <div class="layer-color" style="background:#f59e0b"></div>
+                <div class="layer-info"><div class="layer-name">DEM Barrancabermeja</div><div class="layer-tech">aquiroz:DEM_Barrancabermeja · Ráster</div></div>
+                <div class="layer-color" style="background:#10b981"></div>
               </div>
               <div class="layer-opacity-row">
                 <span class="opacity-label">Opacidad</span>
@@ -221,13 +195,26 @@
             <div class="layer-control">
               <div class="layer-toggle-row">
                 <label class="toggle-switch"><input type="checkbox" id="chk-layer4" onchange="WMS.toggleLayer('layer4',this.checked)"/><span class="toggle-slider"></span></label>
-                <div class="layer-info"><div class="layer-name">Puntos Hidrológicos</div><div class="layer-tech">aquiroz:cortado · Punto</div></div>
-                <div class="layer-color" style="background:#e879f9"></div>
+                <div class="layer-info"><div class="layer-name">Curvas Hidrológicas</div><div class="layer-tech">aquiroz:Curvas Hidrologicas · Línea</div></div>
+                <div class="layer-color" style="background:#f59e0b"></div>
               </div>
               <div class="layer-opacity-row">
                 <span class="opacity-label">Opacidad</span>
                 <input type="range" class="opacity-slider" min="0" max="100" value="100" oninput="WMS.setOpacity('layer4',this.value)"/>
                 <span class="opacity-val" id="opval-layer4">100%</span>
+              </div>
+            </div>
+
+            <div class="layer-control">
+              <div class="layer-toggle-row">
+                <label class="toggle-switch"><input type="checkbox" id="chk-layer5" onchange="WMS.toggleLayer('layer5',this.checked)"/><span class="toggle-slider"></span></label>
+                <div class="layer-info"><div class="layer-name">Puntos Hidrológicos</div><div class="layer-tech">aquiroz:cortado · Punto</div></div>
+                <div class="layer-color" style="background:#e879f9"></div>
+              </div>
+              <div class="layer-opacity-row">
+                <span class="opacity-label">Opacidad</span>
+                <input type="range" class="opacity-slider" min="0" max="100" value="100" oninput="WMS.setOpacity('layer5',this.value)"/>
+                <span class="opacity-val" id="opval-layer5">100%</span>
               </div>
             </div>
           </div>
@@ -236,9 +223,10 @@
             <div class="panel-section-title">Acciones Rápidas</div>
             <div class="action-buttons">
               <button class="btn-action" onclick="WMS.showOnly('layer1')">Solo Municipios</button>
-              <button class="btn-action" onclick="WMS.showOnly('layer2')">Solo DEM</button>
-              <button class="btn-action" onclick="WMS.showOnly('layer3')">Solo Curvas</button>
-              <button class="btn-action" onclick="WMS.showOnly('layer4')">Solo Puntos</button>
+              <button class="btn-action" onclick="WMS.showOnly('layer2')">Solo Departamentos</button>
+              <button class="btn-action" onclick="WMS.showOnly('layer3')">Solo DEM</button>
+              <button class="btn-action" onclick="WMS.showOnly('layer4')">Solo Curvas</button>
+              <button class="btn-action" onclick="WMS.showOnly('layer5')">Solo Puntos</button>
               <button class="btn-action btn-accent" onclick="WMS.showAll()">Composición Total</button>
               <button class="btn-action btn-ghost"  onclick="WMS.hideAll()">Ocultar Todo</button>
             </div>
@@ -247,7 +235,8 @@
           <div class="panel-section">
             <div class="panel-section-title">Leyenda</div>
             <div class="legend-container">
-              <div class="legend-item"><div class="legend-swatch" style="background:#3b82f6"></div><span>Municipios Magdalena Medio</span></div>
+              <div class="legend-item"><div class="legend-swatch" style="background:#3b82f6"></div><span>Municipios MM</span></div>
+              <div class="legend-item"><div class="legend-swatch" style="background:#8b5cf6"></div><span>Departamentos</span></div>
               <div class="legend-item"><div class="legend-swatch" style="background:#10b981"></div><span>DEM Barrancabermeja</span></div>
               <div class="legend-item"><div class="legend-swatch" style="background:#f59e0b"></div><span>Curvas Hidrológicas</span></div>
               <div class="legend-item"><div class="legend-swatch" style="background:#e879f9"></div><span>Puntos Hidrológicos</span></div>
@@ -263,94 +252,86 @@
       </div>
     </section>
 
-    <!-- ── DESCARGAS ──────────────────────────────────── -->
+    <!-- DESCARGAS -->
     <section class="module" id="mod-download">
       <div class="module-header">
         <h2 class="module-title">Descarga de Capas</h2>
-        <p class="module-desc">Descarga en Shapefile, KML o GML directamente desde GeoServer vía WFS.</p>
+        <p class="module-desc">Shapefile, KML o GML directamente desde GeoServer vía WFS.</p>
       </div>
       <div class="download-grid">
 
         <div class="download-card">
-          <div class="dl-card-header">
-            <div class="dl-icon" style="color:#3b82f6"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 9h18M9 3v18" stroke="currentColor" stroke-width="1"/></svg></div>
-            <div><div class="dl-name">Municipios MM</div><div class="dl-layer">aquiroz:mpios_mm</div></div>
-            <div class="dl-badge">Polígono</div>
-          </div>
-          <p class="dl-desc">Límites municipales del Magdalena Medio. Base cartográfica para análisis territorial y planificación regional.</p>
+          <div class="dl-card-header"><div class="dl-icon" style="color:#3b82f6"><svg width="22" height="22" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+          <div><div class="dl-name">Municipios MM</div><div class="dl-layer">aquiroz:mpios_mm</div></div><div class="dl-badge">Polígono</div></div>
+          <p class="dl-desc">Límites municipales del Magdalena Medio.</p>
           <div class="dl-formats">
             <button class="btn-dl btn-shp" onclick="Download.download('mpios_mm','shp')">Shapefile (.zip)</button>
-            <button class="btn-dl btn-kml" onclick="Download.download('mpios_mm','kml')">KML (Google Earth)</button>
+            <button class="btn-dl btn-kml" onclick="Download.download('mpios_mm','kml')">KML</button>
             <button class="btn-dl btn-gml" onclick="Download.download('mpios_mm','gml')">GML</button>
           </div>
           <div class="dl-feedback" id="fb-mpios_mm"></div>
         </div>
 
         <div class="download-card">
-          <div class="dl-card-header">
-            <div class="dl-icon" style="color:#10b981"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 17l4-8 4 5 3-3 4 6H3z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
-            <div><div class="dl-name">DEM Barrancabermeja</div><div class="dl-layer">aquiroz:DEM_Barrancabermeja</div></div>
-            <div class="dl-badge">Ráster</div>
-          </div>
-          <p class="dl-desc">Modelo de Elevación Digital del área de Barrancabermeja. Datos topográficos para análisis de pendientes y cuencas.</p>
+          <div class="dl-card-header"><div class="dl-icon" style="color:#8b5cf6"><svg width="22" height="22" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+          <div><div class="dl-name">Departamentos</div><div class="dl-layer">aquiroz:depto</div></div><div class="dl-badge">Polígono</div></div>
+          <p class="dl-desc">Límites departamentales de la región.</p>
           <div class="dl-formats">
-            <button class="btn-dl btn-shp" onclick="Download.download('DEM_Barrancabermeja','shp')">Shapefile (.zip)</button>
-            <button class="btn-dl btn-kml" onclick="Download.download('DEM_Barrancabermeja','kml')">KML (Google Earth)</button>
-            <button class="btn-dl btn-gml" onclick="Download.download('DEM_Barrancabermeja','gml')">GML</button>
+            <button class="btn-dl btn-shp" onclick="Download.download('depto','shp')">Shapefile (.zip)</button>
+            <button class="btn-dl btn-kml" onclick="Download.download('depto','kml')">KML</button>
+            <button class="btn-dl btn-gml" onclick="Download.download('depto','gml')">GML</button>
+          </div>
+          <div class="dl-feedback" id="fb-depto"></div>
+        </div>
+
+        <div class="download-card">
+          <div class="dl-card-header"><div class="dl-icon" style="color:#10b981"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 17l4-8 4 5 3-3 4 6H3z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+          <div><div class="dl-name">DEM Barrancabermeja</div><div class="dl-layer">aquiroz:DEM_Barrancabermeja</div></div><div class="dl-badge">Ráster</div></div>
+          <p class="dl-desc">Modelo de Elevación Digital del área de Barrancabermeja.</p>
+          <div class="dl-formats">
+            <button class="btn-dl btn-shp" onclick="Download.download('DEM_Barrancabermeja','shp')">GeoTIFF (.tif)</button>
+            <button class="btn-dl btn-kml" onclick="Download.download('DEM_Barrancabermeja','kml')">KML (no disponible)</button>
+            <button class="btn-dl btn-gml" onclick="Download.download('DEM_Barrancabermeja','gml')">GML (no disponible)</button>
           </div>
           <div class="dl-feedback" id="fb-DEM_Barrancabermeja"></div>
         </div>
 
         <div class="download-card">
-          <div class="dl-card-header">
-            <div class="dl-icon" style="color:#f59e0b"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
-            <div><div class="dl-name">Curvas Hidrológicas</div><div class="dl-layer">aquiroz:Curvas Hidrologicas</div></div>
-            <div class="dl-badge">Línea</div>
-          </div>
-          <p class="dl-desc">Red de curvas hidrológicas del área de estudio. Esencial para análisis de drenaje y modelamiento hidrológico.</p>
+          <div class="dl-card-header"><div class="dl-icon" style="color:#f59e0b"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
+          <div><div class="dl-name">Curvas Hidrológicas</div><div class="dl-layer">aquiroz:Curvas Hidrologicas</div></div><div class="dl-badge">Línea</div></div>
+          <p class="dl-desc">Red de curvas hidrológicas del área de estudio.</p>
           <div class="dl-formats">
             <button class="btn-dl btn-shp" onclick="Download.download('Curvas Hidrologicas','shp')">Shapefile (.zip)</button>
-            <button class="btn-dl btn-kml" onclick="Download.download('Curvas Hidrologicas','kml')">KML (Google Earth)</button>
+            <button class="btn-dl btn-kml" onclick="Download.download('Curvas Hidrologicas','kml')">KML</button>
             <button class="btn-dl btn-gml" onclick="Download.download('Curvas Hidrologicas','gml')">GML</button>
           </div>
           <div class="dl-feedback" id="fb-Curvas_Hidrologicas"></div>
         </div>
 
         <div class="download-card">
-          <div class="dl-card-header">
-            <div class="dl-icon" style="color:#e879f9"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="5" cy="7" r="2" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="19" cy="7" r="2" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="5" cy="17" r="2" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="19" cy="17" r="2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg></div>
-            <div><div class="dl-name">Puntos Hidrológicos</div><div class="dl-layer">aquiroz:cortado</div></div>
-            <div class="dl-badge">Punto</div>
-          </div>
-          <p class="dl-desc">Puntos de monitoreo y control hidrológico en la región. Datos de campo para análisis de recursos hídricos.</p>
+          <div class="dl-card-header"><div class="dl-icon" style="color:#e879f9"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="5" cy="7" r="2" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="19" cy="17" r="2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg></div>
+          <div><div class="dl-name">Puntos Hidrológicos</div><div class="dl-layer">aquiroz:cortado</div></div><div class="dl-badge">Punto</div></div>
+          <p class="dl-desc">Puntos de monitoreo hidrológico de la región.</p>
           <div class="dl-formats">
             <button class="btn-dl btn-shp" onclick="Download.download('cortado','shp')">Shapefile (.zip)</button>
-            <button class="btn-dl btn-kml" onclick="Download.download('cortado','kml')">KML (Google Earth)</button>
+            <button class="btn-dl btn-kml" onclick="Download.download('cortado','kml')">KML</button>
             <button class="btn-dl btn-gml" onclick="Download.download('cortado','gml')">GML</button>
           </div>
           <div class="dl-feedback" id="fb-cortado"></div>
         </div>
 
       </div>
-      <div class="wfs-info-panel">
-        <div class="wfs-info-title">URLs WFS — GeoServer Quiroz · aquiroz workspace</div>
-        <div class="url-list">
-          <div class="url-row"><span class="url-label">Shapefile</span><code class="url-code">…/aquiroz/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=aquiroz:{CAPA}&outputFormat=SHAPE-ZIP</code></div>
-          <div class="url-row"><span class="url-label">KML</span><code class="url-code">…/aquiroz/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=aquiroz:{CAPA}&outputFormat=application/vnd.google-earth.kml+xml</code></div>
-          <div class="url-row"><span class="url-label">GML</span><code class="url-code">…/aquiroz/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=aquiroz:{CAPA}&outputFormat=application/gml+xml; version=3.2</code></div>
-        </div>
-      </div>
     </section>
 
-    <!-- ── VISOR ──────────────────────────────────────── -->
+    <!-- VISOR -->
     <section class="module" id="mod-viewer">
       <div class="viewer-layout">
         <div class="viewer-toolbar">
           <div class="viewer-title">Visor Geográfico · Magdalena Medio</div>
           <div class="viewer-tools">
             <button class="tool-btn active" id="btn-osm"  onclick="Viewer.setBase('osm')">OSM</button>
-            <button class="tool-btn"         id="btn-sat"  onclick="Viewer.setBase('sat')">SAT</button>
-            <button class="tool-btn"         id="btn-topo" onclick="Viewer.setBase('topo')">TOPO</button>
+            <button class="tool-btn"        id="btn-sat"  onclick="Viewer.setBase('sat')">SAT</button>
+            <button class="tool-btn"        id="btn-topo" onclick="Viewer.setBase('topo')">TOPO</button>
             <div class="tool-separator"></div>
             <button class="tool-btn" onclick="Viewer.zoomToExtent()">Colombia</button>
             <button class="tool-btn" id="btnToggleWMS" onclick="Viewer.toggleWMS()">WMS</button>
@@ -365,43 +346,43 @@
       </div>
     </section>
 
-    <!-- ── CONTACTO ───────────────────────────────────── -->
+    <!-- CONTACTO -->
     <section class="module" id="mod-contact">
       <div class="contact-layout">
         <div class="contact-left">
           <h2 class="contact-heading">Contacto</h2>
-          <p class="contact-intro">¿Tienes preguntas sobre los datos geoespaciales o quieres proponer un proyecto de cartografía, drones o gestión ambiental?</p>
+          <p class="contact-intro">Proyectos de cartografía, drones o gestión ambiental en el Magdalena Medio.</p>
           <div class="contact-detail">
-            <div class="cd-row"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 4a1 1 0 011-1h10a1 1 0 011 1v7a1 1 0 01-1 1H3a1 1 0 01-1-1V4z" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M2 4l6 5 6-5" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>soluciones@dronesfalcon.co</span></div>
-            <div class="cd-row"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 4a2 2 0 012-2h1l1.5 3.5L5 7a10 10 0 004 4l1.5-1.5L14 11v1a2 2 0 01-2 2A10 10 0 012 4z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>3502160379</span></div>
-            <div class="cd-row"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Carrera 27 No. 45-74 · Barrancabermeja</span></div>
+            <div class="cd-row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4a1 1 0 011-1h10a1 1 0 011 1v7a1 1 0 01-1 1H3a1 1 0 01-1-1V4z" stroke="currentColor" stroke-width="1.2"/><path d="M2 4l6 5 6-5" stroke="currentColor" stroke-width="1.2"/></svg><span>soluciones@dronesfalcon.co</span></div>
+            <div class="cd-row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4a2 2 0 012-2h1l1.5 3.5L5 7a10 10 0 004 4l1.5-1.5L14 11v1a2 2 0 01-2 2A10 10 0 012 4z" stroke="currentColor" stroke-width="1.2"/></svg><span>3502160379</span></div>
+            <div class="cd-row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.2"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.2"/></svg><span>Carrera 27 No. 45-74 · Barrancabermeja</span></div>
           </div>
         </div>
         <form class="contact-form" id="contactForm" onsubmit="Contact.submit(event)">
           <div class="form-group">
-            <label class="form-label" for="contactName">Nombre completo *</label>
+            <label class="form-label" for="contactName">Nombre *</label>
             <input type="text" id="contactName" class="form-input" placeholder="Tu nombre" required/>
             <span class="form-error" id="err-name"></span>
           </div>
           <div class="form-group">
-            <label class="form-label" for="contactEmail">Correo electrónico *</label>
+            <label class="form-label" for="contactEmail">Correo *</label>
             <input type="email" id="contactEmail" class="form-input" placeholder="correo@ejemplo.com" required/>
             <span class="form-error" id="err-email"></span>
           </div>
           <div class="form-group">
             <label class="form-label" for="contactSubject">Asunto</label>
             <select id="contactSubject" class="form-input form-select">
-              <option value="">Selecciona un tema...</option>
-              <option value="datos">Solicitud de datos geoespaciales</option>
-              <option value="drones">Proyecto cartografía con drones</option>
-              <option value="ambiental">Consultoría ambiental</option>
-              <option value="tecnico">Soporte técnico GeoServer / SIG</option>
-              <option value="otro">Otro</option>
+              <option value="">Selecciona...</option>
+              <option>Solicitud de datos geoespaciales</option>
+              <option>Proyecto cartografía con drones</option>
+              <option>Consultoría ambiental</option>
+              <option>Soporte técnico GeoServer</option>
+              <option>Otro</option>
             </select>
           </div>
           <div class="form-group">
             <label class="form-label" for="contactMsg">Mensaje *</label>
-            <textarea id="contactMsg" class="form-input form-textarea" placeholder="Describe tu consulta..." rows="5" required></textarea>
+            <textarea id="contactMsg" class="form-input form-textarea" rows="5" placeholder="Describe tu consulta..." required></textarea>
             <span class="form-error" id="err-msg"></span>
           </div>
           <button type="submit" class="btn-submit" id="btnSubmit">Enviar mensaje</button>

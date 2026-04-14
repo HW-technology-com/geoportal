@@ -1,5 +1,5 @@
 /**
- * wms.js — Módulo visualización WMS — 4 capas reales
+ * wms.js — Módulo WMS · 5 capas
  */
 const WMS = (() => {
   let map = null, layers = {}, initialized = false;
@@ -23,7 +23,7 @@ const WMS = (() => {
     Object.keys(CONFIG.LAYERS).forEach(k => { layers[k] = makeLayer(k); });
     map = new ol.Map({
       target: 'wms-map',
-      layers: [base, layers.layer1, layers.layer2, layers.layer3, layers.layer4],
+      layers: [base, ...Object.values(layers)],
       view: new ol.View({ center: ol.proj.fromLonLat(CONFIG.DEFAULT_CENTER), zoom: CONFIG.DEFAULT_ZOOM }),
       controls: ol.control.defaults.defaults({ zoom: true, attribution: false })
     });
